@@ -1,0 +1,22 @@
+name: second
+
+on: push
+
+jobs:
+  ubuntus:
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  winds:
+    runs-on: windows-latest
+    steps:
+    - run: date
+  macs:
+    runs-on: macos-latest
+    steps:
+    - run: date
+  lastone:
+    needs: [ubuntus, winds, macs]
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
